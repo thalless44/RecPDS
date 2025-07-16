@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="246.0" prefWidth="349.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EfetuarVendaController">
+   <children>
+      <Label layoutX="25.0" layoutY="56.0" text="Produto:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="118.0" text="Quantidade:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="22.0" layoutY="87.0" text="Cliente:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="179.0" text="Data da Venda:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button layoutX="78.0" layoutY="207.0" mnemonicParsing="false" onAction="#onClickVenda" prefHeight="17.0" prefWidth="91.0" text="Efetuar Venda" />
+      <Label layoutX="142.0" layoutY="14.0" text="Venda">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="203.0" layoutY="207.0" mnemonicParsing="false" onAction="#onClickSair" prefHeight="17.0" prefWidth="91.0" text="Cancelar" />
+      <DatePicker fx:id="dataVenda" layoutX="116.0" layoutY="175.0" />
+      <Label fx:id="lblProduto" layoutX="124.0" layoutY="56.0" prefHeight="17.0" prefWidth="189.0" />
+      <ComboBox fx:id="cbxCliente" layoutX="121.0" layoutY="83.0" prefWidth="150.0" />
+      <Label layoutX="21.0" layoutY="145.0" text="Valor:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblValorProduto" layoutX="109.0" layoutY="145.0" prefHeight="17.0" prefWidth="189.0" />
+      <Label fx:id="lblQproduto1" layoutX="109.0" layoutY="118.0" prefHeight="17.0" prefWidth="189.0" text="1" />
+   </children>
+</AnchorPane>
