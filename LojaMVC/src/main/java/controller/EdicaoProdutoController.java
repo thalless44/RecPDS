@@ -37,6 +37,30 @@ public class EdicaoProdutoController {
     // Método para salvar as alterações feitas no produto
     @FXML
     void onClickEditarProdutos(ActionEvent event) {
+        
+        String nome = txtNome.getText();
+        String quantidadeEstoqueStr = txtQuantidade.getText();
+        String valorStr = txtValor.getText();
+
+        // Validação simples dos campos
+        if (nome.isEmpty() || quantidadeEstoqueStr.isEmpty() || valorStr.isEmpty()) {
+            PrincipalController.mostrarAlerta("Erro", "Todos os campos devem ser preenchidos.");
+            return;
+        }
+        if (nome.matches(".*\\d.*")) {
+                PrincipalController.mostrarAlerta("Nome inválido", "O nome não pode conter números.");
+                return;
+            }
+
+            if (!valorStr.matches("[0-9\\-()+.]+.+")) {
+                PrincipalController.mostrarAlerta("Erro", "O Valor não pode posuir letras.");
+                return;
+            }
+            if (!quantidadeEstoqueStr.matches("[0-9\\-()+ ]+")) {
+                PrincipalController.mostrarAlerta("Erro", "A Quantidade não pode posuir letras.");
+                return;
+            }
+        
         if (produto != null) {
             produto.setNome(txtNome.getText());
 

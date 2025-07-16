@@ -150,7 +150,7 @@ public class PrincipalController {
 
     
 
-    // Métodos de navegação para outras telas
+ 
     @FXML
     void onClickCadastrarCliente(ActionEvent event) throws IOException {
         URL url = new File("src/main/java/view/CadastroCliente.fxml").toURI().toURL();

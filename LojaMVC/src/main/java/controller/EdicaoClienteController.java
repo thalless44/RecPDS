@@ -46,10 +46,31 @@ public class EdicaoClienteController {
     // Método para salvar as alterações feitas no cliente
     @FXML
     void onClickSalvar(ActionEvent event) {
+        
+        String nome = txtNome.getText();
+        String endereco = txtEndereco.getText();
+        String telefone = txtTelefone.getText();
+        
+        if (nome.isEmpty() || endereco.isEmpty() || telefone.isEmpty() || dataNascimento.getValue() == null) {
+                PrincipalController.mostrarAlerta("Erro", "Todos os campos devem ser preenchidos.");
+                return;
+            }
+            if (nome.matches(".*\\d.*")) {
+                PrincipalController.mostrarAlerta("Nome inválido", "O nome não pode conter números.");
+                return;
+            }
+
+            if (!telefone.matches("[0-9\\-()+ ]+")|| telefone.replaceAll("[^0-9]", "").length() != 11  ) {
+                PrincipalController.mostrarAlerta("Telefone inválido", "O telefone não pode conter letras ou maior menor que 12 digitos.");
+                return;
+            }
+        
+        
+        
         if (cliente != null) {
-            cliente.setNome(txtNome.getText());
-            cliente.setEndereco(txtEndereco.getText());
-            cliente.setTelefone(txtTelefone.getText());
+            cliente.setNome(nome);
+            cliente.setEndereco(endereco);
+            cliente.setTelefone(telefone);
 
             try {
                 if (dataNascimento.getValue() != null) {

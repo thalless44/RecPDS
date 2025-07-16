@@ -25,7 +25,6 @@
             <items>
                   <MenuItem mnemonicParsing="false" onAction="#onClickRelatoriosProduto" text="Produtos" />
                   <MenuItem mnemonicParsing="false" onAction="#onClickRelatoriosCliente" text="Clientes" />
-                  <MenuItem mnemonicParsing="false" text="Vendas" />
             </items>
           </Menu>
         </menus>
